@@ -1,36 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createStoreHook } from 'react-redux';
+import { Provider, createStoreHook } from 'react-redux';
 import { catchClause } from '@babel/types';
-
-const defaultState = {
-  cash: 0
-}
-
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case "ADD_CASH":
-      return {...state, cash: state.cash + action.payload }
-      
-    case "GET_CASH":
-      return {...state, cash: state.cash - action.payload }
-
-    default: 
-      return state
-  }
-}
-
-const store = createStoreHook(reducer)
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
+import { createStore } from 'redux';
+import { store } from './store';
 
 ReactDOM.render(
   <Provider store={store}>
