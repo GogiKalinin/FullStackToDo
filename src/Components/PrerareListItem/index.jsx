@@ -7,11 +7,16 @@ const dispatch = useDispatch()
 const customers = useSelector(state => state.customers.customers)
     
 const showText = () => {
-    const text = document.getElementById('DigitalInput')
-    console.log(text !== null && text.value)
+    const text = document.getElementById('DigitalInput').value
+    console.log(text !== null && text)
     console.log(customers)
-        
+    const item = {text}
+    console.log(text)
+    dispatch({type: "ADD_ITEM", payload: item})
 }
+
+// const addItem = (cash) => {
+//   }
   
   return (
   <div className='PrepareListItem'>

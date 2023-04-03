@@ -18,10 +18,12 @@ const getCash = (cash) => {
   dispatch({type: "GET_CASH", payload: cash})
 }
 
+console.log(list)
+
   return (
     <div className="App">
-      <div style={{fontSize: '5em'}}>{cash}</div>
-      <div style={{fontSize: '5em'}}>{customers}</div>
+      {/* <div style={{fontSize: '5em'}}>{cash}</div> */}
+      {/* <div style={{fontSize: '5em'}}>{customers}</div> */}
       <div style={{fontSize: '5em'}}>{list}</div>
       <button onClick={()=>addCash(Number(prompt()))}>Пополнить</button>
       <button onClick={()=>getCash(Number(prompt()))}>Снять</button>
